@@ -1,0 +1,47 @@
+name: Deploy to Cloudflare
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.repository == 'Airmech-oman/airmech-oman-website'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Prepare production files
+        shell: bash
+        run: |
+          mkdir -p dist/assets
+          cp index.html styles.css script.js dist/
+          cp assets/airmech-logo-transparent.png dist/assets/
+          cp assets/airmech-logo.png dist/assets/
+          cp assets/hvac-top-fan.jpg dist/assets/
+          cp assets/curtain-wall-facade.jpg dist/assets/
+          cp assets/structural-glazing.jpg dist/assets/
+          cp assets/cladding-louvres.jpg dist/assets/
+
+      - name: Deploy website
+        if: env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != ''
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ env.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config wrangler.jsonc
