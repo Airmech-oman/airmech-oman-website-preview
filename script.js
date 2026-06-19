@@ -4,6 +4,20 @@ const nav = document.querySelector('.nav-links');
 const form = document.querySelector('.contact-form');
 const formStatus = document.querySelector('.form-status');
 
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+const resetInitialScroll = () => {
+  if (window.location.hash) return;
+  window.scrollTo(0, 0);
+};
+
+resetInitialScroll();
+window.addEventListener('pageshow', () => {
+  requestAnimationFrame(resetInitialScroll);
+});
+
 const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 24);
 const closeMenu = () => {
   nav.classList.remove('open');
