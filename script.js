@@ -5,6 +5,12 @@ const form = document.querySelector('.contact-form');
 const formStatus = document.querySelector('.form-status');
 
 const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 24);
+const closeMenu = () => {
+  nav.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  menuButton.setAttribute('aria-label', 'Open menu');
+};
+
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
@@ -15,10 +21,20 @@ menuButton.addEventListener('click', () => {
 });
 
 nav.querySelectorAll('a').forEach((link) => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menuButton.setAttribute('aria-expanded', 'false');
-  });
+  link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('click', (event) => {
+  if (!nav.classList.contains('open')) return;
+  if (!nav.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMenu();
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1120) closeMenu();
 });
 
 const observer = new IntersectionObserver((entries) => {
