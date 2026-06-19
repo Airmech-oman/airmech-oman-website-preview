@@ -17,6 +17,13 @@ resetInitialScroll();
 window.addEventListener('pageshow', () => {
   requestAnimationFrame(resetInitialScroll);
 });
+window.addEventListener('load', () => {
+  [0, 120, 400].forEach((delay) => {
+    window.setTimeout(() => {
+      if (!window.location.hash && window.scrollY < 320) resetInitialScroll();
+    }, delay);
+  });
+});
 
 const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 24);
 const closeMenu = () => {
