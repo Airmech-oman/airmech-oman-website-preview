@@ -639,11 +639,15 @@ h2 { margin: 0; font-size: clamp(38px, 4.2vw, 62px); line-height: 1.08; letter-s
   width: min(190px, 84%);
   max-height: 66px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: .82;
+  opacity: .95;
   transition: opacity .2s ease, transform .2s ease;
 }
 .brand-cloud .brand-logo:hover img { opacity: 1; transform: scale(1.025); }
+.brand-cloud .brand-logo-montair img,
+.brand-cloud .brand-logo-sempa img,
+.brand-cloud .brand-logo-camfil img {
+  filter: brightness(0) invert(1);
+}
 .brand-cloud .brand-logo-evapco img { width: min(165px, 78%); max-height: 62px; }
 .brand-cloud .brand-logo-montair img { width: min(154px, 76%); max-height: 59px; }
 .brand-cloud .brand-logo-ares img { width: min(145px, 72%); max-height: 58px; }
