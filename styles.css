@@ -640,7 +640,7 @@ h2 { margin: 0; font-size: clamp(38px, 4.2vw, 62px); line-height: 1.08; letter-s
   max-height: 66px;
   object-fit: contain;
   filter: brightness(0) invert(1);
-  opacity: .9;
+  opacity: .82;
   transition: opacity .2s ease, transform .2s ease;
 }
 .brand-cloud .brand-logo:hover img { opacity: 1; transform: scale(1.025); }
