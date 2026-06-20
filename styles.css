@@ -645,7 +645,8 @@ h2 { margin: 0; font-size: clamp(38px, 4.2vw, 62px); line-height: 1.08; letter-s
 .brand-cloud .brand-logo:hover img { opacity: 1; transform: scale(1.025); }
 .brand-cloud .brand-logo-montair img,
 .brand-cloud .brand-logo-sempa img,
-.brand-cloud .brand-logo-camfil img {
+.brand-cloud .brand-logo-camfil img,
+.brand-cloud .brand-logo-bsk img {
   filter: brightness(0) invert(1);
 }
 .brand-cloud .brand-logo-evapco img { width: min(165px, 78%); max-height: 62px; }
@@ -653,7 +654,7 @@ h2 { margin: 0; font-size: clamp(38px, 4.2vw, 62px); line-height: 1.08; letter-s
 .brand-cloud .brand-logo-ares img { width: min(145px, 72%); max-height: 58px; }
 .brand-cloud .brand-logo-sempa img { width: min(172px, 80%); max-height: 54px; }
 .brand-cloud .brand-logo-camfil img { width: min(176px, 82%); max-height: 52px; }
-.brand-cloud .brand-logo-bsk img { width: min(154px, 76%); max-height: 48px; }
+.brand-cloud .brand-logo-bsk img { width: min(168px, 82%); max-height: 52px; }
 .brand-cloud .brand-logo-novenco img { width: min(170px, 80%); max-height: 54px; }
 
 .contact { background: var(--ice); }
@@ -809,7 +810,7 @@ footer { padding: 75px 0 25px; color: #bac9d0; background: #041725; }
   .brand-cloud .brand-logo-ares img { width: min(112px, 80%); max-height: 46px; }
   .brand-cloud .brand-logo-sempa img { width: min(132px, 84%); max-height: 42px; }
   .brand-cloud .brand-logo-camfil img { width: min(132px, 84%); max-height: 40px; }
-  .brand-cloud .brand-logo-bsk img { width: min(116px, 78%); max-height: 38px; }
+  .brand-cloud .brand-logo-bsk img { width: min(128px, 84%); max-height: 42px; }
   .brand-cloud .brand-logo-novenco img { width: min(128px, 82%); max-height: 42px; }
   .contact-card { width: calc(100% - 20px); padding: 38px 24px; }
   .contact-form { grid-template-columns: 1fr; }
