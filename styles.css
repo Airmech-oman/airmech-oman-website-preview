@@ -630,6 +630,13 @@ h2 { margin: 0; font-size: clamp(38px, 4.2vw, 62px); line-height: 1.08; letter-s
   letter-spacing: .04em;
 }
 .brand-cloud span:hover { color: var(--green-bright); background: rgba(255,255,255,.04); }
+.brand-cloud .brand-logo { padding: 18px 28px; background: rgba(255,255,255,.96); }
+.brand-cloud .brand-logo:hover { background: white; }
+.brand-cloud .brand-logo img {
+  width: min(190px, 84%);
+  max-height: 66px;
+  object-fit: contain;
+}
 
 .contact { background: var(--ice); }
 .contact .about-contact { margin-top: 28px; }
@@ -777,6 +784,8 @@ footer { padding: 75px 0 25px; color: #bac9d0; background: #041725; }
   .product-list h3 { font-size: 20px; }
   .product-number { padding-top: 4px; }
   .brand-cloud span { min-height: 85px; font-size: 15px; }
+  .brand-cloud .brand-logo { padding: 14px 18px; }
+  .brand-cloud .brand-logo img { width: min(145px, 90%); max-height: 50px; }
   .contact-card { width: calc(100% - 20px); padding: 38px 24px; }
   .contact-form { grid-template-columns: 1fr; }
   .contact-form label.full { grid-column: auto; }
