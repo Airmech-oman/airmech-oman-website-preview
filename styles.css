@@ -630,8 +630,11 @@ h2 { margin: 0; font-size: clamp(38px, 4.2vw, 62px); line-height: 1.08; letter-s
   letter-spacing: .04em;
 }
 .brand-cloud span:hover { color: var(--green-bright); background: rgba(255,255,255,.04); }
-.brand-cloud .brand-logo { padding: 18px 28px; background: rgba(255,255,255,.96); }
-.brand-cloud .brand-logo:hover { background: white; }
+.brand-cloud .brand-logo { padding: 18px 28px; }
+.brand-cloud .brand-logo-trane { background: rgba(255,255,255,.04); }
+.brand-cloud .brand-logo-trane:hover { background: rgba(255,255,255,.08); }
+.brand-cloud .brand-logo-evapco { background: rgba(255,255,255,.96); }
+.brand-cloud .brand-logo-evapco:hover { background: white; }
 .brand-cloud .brand-logo img {
   width: min(190px, 84%);
   max-height: 66px;
