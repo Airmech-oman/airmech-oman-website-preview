@@ -645,8 +645,7 @@ h2 { margin: 0; font-size: clamp(38px, 4.2vw, 62px); line-height: 1.08; letter-s
 .brand-cloud .brand-logo:hover img { opacity: 1; transform: scale(1.025); }
 .brand-cloud .brand-logo-montair img,
 .brand-cloud .brand-logo-sempa img,
-.brand-cloud .brand-logo-camfil img,
-.brand-cloud .brand-logo-bsk img {
+.brand-cloud .brand-logo-camfil img {
   filter: brightness(0) invert(1);
 }
 .brand-cloud .brand-logo-evapco img { width: min(165px, 78%); max-height: 62px; }
@@ -654,7 +653,17 @@ h2 { margin: 0; font-size: clamp(38px, 4.2vw, 62px); line-height: 1.08; letter-s
 .brand-cloud .brand-logo-ares img { width: min(145px, 72%); max-height: 58px; }
 .brand-cloud .brand-logo-sempa img { width: min(172px, 80%); max-height: 54px; }
 .brand-cloud .brand-logo-camfil img { width: min(176px, 82%); max-height: 52px; }
-.brand-cloud .brand-logo-bsk img { width: min(168px, 82%); max-height: 52px; }
+.brand-cloud .brand-logo-bsk img {
+  width: min(168px, 82%);
+  max-height: 52px;
+  opacity: 1;
+  filter:
+    drop-shadow(1px 0 0 rgba(255,255,255,.9))
+    drop-shadow(-1px 0 0 rgba(255,255,255,.9))
+    drop-shadow(0 1px 0 rgba(255,255,255,.9))
+    drop-shadow(0 -1px 0 rgba(255,255,255,.9))
+    drop-shadow(0 0 5px rgba(255,255,255,.55));
+}
 .brand-cloud .brand-logo-novenco img { width: min(170px, 80%); max-height: 54px; }
 
 .contact { background: var(--ice); }
